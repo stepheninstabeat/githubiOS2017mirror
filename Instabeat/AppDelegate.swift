@@ -4,6 +4,8 @@
 //
 //  Created by Dmytro on 4/25/16.
 //  Copyright © 2016 GL. All rights reserved.
+//  
+//  This is a duplicate of the iOS repo with SwimLib removed.
 //
 
 import UIKit
