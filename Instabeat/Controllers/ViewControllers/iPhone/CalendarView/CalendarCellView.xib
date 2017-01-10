@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Blender Pro Book.ttf">
+            <string>BlenderPro-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="S0w-C3-aBs" customClass="CalendarCellView" customModule="Instabeat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7s-8j-sxm">
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="A7s-8j-sxm" secondAttribute="height" multiplier="1:1" id="1U8-mO-Oq5"/>
+                        <constraint firstAttribute="height" constant="27" id="P6V-ka-X4p"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="BlenderPro-Book" family="Blender Pro" pointSize="19"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Bw-OI-Ub9">
+                    <subviews>
+                        <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hG-8X-ELf">
+                            <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="3" id="Cis-YH-zeD"/>
+                                <constraint firstAttribute="width" constant="13" id="Mvn-HN-0Wj"/>
+                            </constraints>
+                        </view>
+                        <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sIE-7Z-ed2">
+                            <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="3" id="xtY-fe-LVp"/>
+                            </constraints>
+                        </view>
+                        <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAb-Fp-Ryx">
+                            <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="3" id="YhZ-aq-0ft"/>
+                                <constraint firstAttribute="width" constant="13" id="waP-x1-ZLg"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="21" id="0WC-GP-V5S"/>
+                        <constraint firstAttribute="bottom" secondItem="bAb-Fp-Ryx" secondAttribute="bottom" id="1Ab-Um-U7J"/>
+                        <constraint firstItem="sIE-7Z-ed2" firstAttribute="centerX" secondItem="1Bw-OI-Ub9" secondAttribute="centerX" id="20R-OH-c7o"/>
+                        <constraint firstItem="sIE-7Z-ed2" firstAttribute="top" secondItem="1hG-8X-ELf" secondAttribute="bottom" id="Csf-4r-h71"/>
+                        <constraint firstItem="1hG-8X-ELf" firstAttribute="top" secondItem="1Bw-OI-Ub9" secondAttribute="top" id="Qgn-0n-o12"/>
+                        <constraint firstItem="bAb-Fp-Ryx" firstAttribute="top" secondItem="sIE-7Z-ed2" secondAttribute="bottom" id="XsV-QX-rmB"/>
+                        <constraint firstItem="1hG-8X-ELf" firstAttribute="centerX" secondItem="1Bw-OI-Ub9" secondAttribute="centerX" id="pJ2-Fb-PvJ"/>
+                        <constraint firstItem="bAb-Fp-Ryx" firstAttribute="centerX" secondItem="1Bw-OI-Ub9" secondAttribute="centerX" id="vW0-xV-cj9"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.24705882352941178" green="0.24705882352941178" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="1Bw-OI-Ub9" firstAttribute="centerX" secondItem="S0w-C3-aBs" secondAttribute="centerX" id="B0k-bs-cYI"/>
+                <constraint firstAttribute="bottom" secondItem="1Bw-OI-Ub9" secondAttribute="bottom" constant="6" id="Y8d-7Y-AbV"/>
+                <constraint firstItem="A7s-8j-sxm" firstAttribute="centerX" secondItem="S0w-C3-aBs" secondAttribute="centerX" id="aJy-th-oO5"/>
+                <constraint firstItem="A7s-8j-sxm" firstAttribute="top" secondItem="S0w-C3-aBs" secondAttribute="top" constant="6" id="aXq-rw-8Yp"/>
+                <constraint firstItem="1Bw-OI-Ub9" firstAttribute="top" secondItem="A7s-8j-sxm" secondAttribute="bottom" constant="6" id="kTq-LY-6Y0"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                    <color key="value" red="0.2470588235" green="0.2470588235" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="normalDayColor">
+                    <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="dayLabel" destination="A7s-8j-sxm" id="E0b-AV-IO5"/>
+                <outlet property="endBarChartView" destination="1hG-8X-ELf" id="WUy-kc-WhX"/>
+                <outlet property="sessionBarChartView" destination="sIE-7Z-ed2" id="Gwd-pq-Tuu"/>
+                <outlet property="startBarChartView" destination="bAb-Fp-Ryx" id="6Y8-9y-wGX"/>
+            </connections>
+            <point key="canvasLocation" x="-247" y="445"/>
+        </view>
+    </objects>
+</document>
