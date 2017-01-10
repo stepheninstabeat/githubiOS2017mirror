@@ -112,6 +112,7 @@ class CentralBuetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDe
             } else if DataStorage.shared.activeUser.instabeatHardwareVersion == peripheral.identifier.uuidString {
                 self.centralManager(connectPeripheral: peripheral,
                                     timeOut: 15.0)
+                
             }
         }
     }
