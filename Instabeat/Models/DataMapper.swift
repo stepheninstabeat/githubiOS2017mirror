@@ -66,8 +66,7 @@ class DataParser: NSObject {
                 //    return (nil, "Can't parse session data")
                 //}
                 //SwimLibrary.swimLibClose(ident)
-//                return (session, nil)
-                return (nil, nil)
+                return (session, nil)
             }
             catch {
                 return (nil, "Can't parse session data")
