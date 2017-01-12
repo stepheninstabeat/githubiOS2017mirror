@@ -12,18 +12,21 @@ import ObjectMapper
 
 class DataMapper: NSObject {
     class func convertHeartRateDataToInt(heartRateData data: NSData) -> Int {
-        var buffer = [UInt8](repeating: 0x00, count: data.length)
-        data.getBytes(&buffer, length: buffer.count)
-        var bpm:UInt16!
-        if (buffer.count >= 2){
-            if (buffer[0] & 0x01 == 0){
-                bpm = UInt16(buffer[1]);
-            }else {
-                bpm = UInt16(buffer[1]) << 8
-                bpm =  bpm! | UInt16(buffer[2])
-            }
-        }
-        return Int(bpm)
+//        var buffer = [UInt8](repeating: 0x00, count: data.length)
+//        data.getBytes(&buffer, length: buffer.count)
+//        var bpm:UInt16!
+//        if (buffer.count >= 2){
+//            if (buffer[0] & 0x01 == 0){
+//                bpm = UInt16(buffer[1]);
+//            }else {
+//                bpm = UInt16(buffer[1]) << 8
+//                bpm =  bpm! | UInt16(buffer[2])
+//            }
+//        }
+        var buf : UInt16! = 0
+        data.getBytes(&buf, range: NSRange(location: 0, length: 2))
+
+        return Int(buf)
     }
     class func convertStringToDictionary(_ text: String) -> [String: Any]? {
         if let data = text.data(using: String.Encoding.utf8) {
@@ -63,7 +66,8 @@ class DataParser: NSObject {
                 //    return (nil, "Can't parse session data")
                 //}
                 //SwimLibrary.swimLibClose(ident)
-                return (session, nil)
+//                return (session, nil)
+                return (nil, nil)
             }
             catch {
                 return (nil, "Can't parse session data")

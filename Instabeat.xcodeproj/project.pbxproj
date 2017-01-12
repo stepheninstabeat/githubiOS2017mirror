@@ -144,8 +144,6 @@
 		666DF8C41DD620BC0044830D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666DF8C31DD620BC0044830D /* User.swift */; };
 		666ED16C1D75AE6700DA15E6 /* PortraitBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666ED16B1D75AE6700DA15E6 /* PortraitBarChartView.swift */; };
 		666ED16E1D75EEDF00DA15E6 /* LandscapeBarCharView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666ED16D1D75EEDF00DA15E6 /* LandscapeBarCharView.swift */; };
-		66701E161DC3725D00C3CA0C /* SwimLibSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66701E151DC3725D00C3CA0C /* SwimLibSwift.framework */; };
-		66701E181DC3726000C3CA0C /* SwimLibSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66701E151DC3725D00C3CA0C /* SwimLibSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		667BBD1B1D5CE55F0021AB24 /* session 8.txt in Resources */ = {isa = PBXBuildFile; fileRef = 667BBD1A1D5CE55F0021AB24 /* session 8.txt */; };
 		667BBD1F1D5DC7C70021AB24 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667BBD1E1D5DC7C70021AB24 /* CalendarViewController.swift */; };
 		667BBD231D5DD5980021AB24 /* CalendatCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667BBD211D5DD5980021AB24 /* CalendatCellView.swift */; };
@@ -200,7 +198,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				66701E181DC3726000C3CA0C /* SwimLibSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,7 +346,6 @@
 		666DF8C31DD620BC0044830D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
 		666ED16B1D75AE6700DA15E6 /* PortraitBarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PortraitBarChartView.swift; path = SupportingFiles/PortraitBarChartView/PortraitBarChartView.swift; sourceTree = "<group>"; };
 		666ED16D1D75EEDF00DA15E6 /* LandscapeBarCharView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandscapeBarCharView.swift; path = SupportingFiles/LandscapeBarCharView/LandscapeBarCharView.swift; sourceTree = "<group>"; };
-		66701E151DC3725D00C3CA0C /* SwimLibSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwimLibSwift.framework; sourceTree = "<group>"; };
 		6671FD651DBFB166007FF6B6 /* SFNS Display Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFNS Display Regular.ttf"; sourceTree = "<group>"; };
 		667BBD1A1D5CE55F0021AB24 /* session 8.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "session 8.txt"; sourceTree = "<group>"; };
 		667BBD1E1D5DC7C70021AB24 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarViewController.swift; path = Controllers/ViewControllers/iPhone/CalendarView/CalendarViewController.swift; sourceTree = "<group>"; };
@@ -405,7 +401,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66701E161DC3725D00C3CA0C /* SwimLibSwift.framework in Frameworks */,
 				C55A40AE3103010D476CB78B /* Pods_Instabeat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1100,7 +1095,6 @@
 		9AB26BC657343B8C92D3EDD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				66701E151DC3725D00C3CA0C /* SwimLibSwift.framework */,
 				660E21691D23E4FE004EA48E /* CoreGraphics.framework */,
 				6602A73D1CCE21B500CE989D /* CoreBluetooth.framework */,
 				7647F10ED71F852B88AE5076 /* Pods_Instabeat.framework */,
@@ -1145,7 +1139,7 @@
 				TargetAttributes = {
 					6602A71A1CCE159000CE989D = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = MX2U3CDD7X;
+						DevelopmentTeam = AT23DVQ8KF;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -1474,6 +1468,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1523,6 +1518,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1553,9 +1549,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Instabeat Inc. (Q8763J3C7H)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = MX2U3CDD7X;
+				DEVELOPMENT_TEAM = AT23DVQ8KF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1570,7 +1566,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.instabeat.apps.InstabeatApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riverviews.ProductFriend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1586,9 +1582,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Instabeat Inc. (Q8763J3C7H)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = MX2U3CDD7X;
+				DEVELOPMENT_TEAM = AT23DVQ8KF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1604,7 +1600,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.instabeat.apps.InstabeatApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riverviews.ProductFriend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REEXPORTED_LIBRARY_PATHS = "";
 				SWIFT_VERSION = 3.0.1;

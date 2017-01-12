@@ -351,6 +351,7 @@ class CentralBuetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDe
         if characteristic == self.TXCharacteristic {
             //            UIHelper.showSuccessHUDWithStatus(status: "Did write value!")
         }
+        
     }
     
     func getInt(fromData data: Data, start: Int) -> Int {
@@ -376,6 +377,92 @@ class CentralBuetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDe
 //            //DDLogInfo("Notification stopped on (\(characteristic))  Disconnecting")
 //            centralManager?.cancelPeripheralConnection(peripheral)
 //        }
+        
+        guard error == nil else {
+            print(error?.localizedDescription ?? "Error updating value")
+            return
+        }
+        switch characteristic.uuid {
+        case BLE.characteristic.heartRateMeasurement:
+            print("Update on BLE.characteristic.heartRateMeasurement")
+            let heartBeat = DataMapper.convertHeartRateDataToInt(heartRateData: characteristic.value! as NSData)
+            characteristicUpdateDelegate?.update(heartBeatRate: heartBeat)
+        case BLE.characteristic.manufacturerName:
+            print("Update on BLE.characteristic.manufacturerName")
+            let datastring = String(data: characteristic.value!,
+                                    encoding: String.Encoding.utf8)
+            DataStorage.shared.connectedPeripheral.manufacturerName = datastring!
+            characteristicUpdateDelegate?.update(deviceInfo: datastring!)
+        case BLE.characteristic.hardwareRevision:
+            print("Update on BLE.characteristic.hardwareRevision")
+            let hardwareRevision = String(data: characteristic.value!,
+                                          encoding: String.Encoding.utf8)
+            DataStorage.shared.connectedPeripheral.hardwareRevision = hardwareRevision!
+            characteristicUpdateDelegate?.update(hardwareRevision: hardwareRevision!)
+        case BLE.characteristic.firmwareRevision:
+            print("Update on BLE.characteristic.firmwareRevision")
+            let firmwareVersion = String(data: characteristic.value!,
+                                         encoding: String.Encoding.utf8)
+            DataStorage.shared.connectedPeripheral.firmwareVersion = firmwareVersion!
+            characteristicUpdateDelegate?.update(firmwareVersion: firmwareVersion!)
+        case BLE.characteristic.batteryLevel:
+            print("Update on BLE.characteristic.batteryLevel")
+            let batteryLevel = getInt(fromData: characteristic.value!,
+                                      start: 0)
+            DataStorage.shared.connectedPeripheral.batteryStatus = String(batteryLevel)
+            characteristicUpdateDelegate?.update(batteryLevel: batteryLevel)
+        case BLE.characteristic.serialNumber:
+            print("Update on BLE.characteristic.serialNumber")
+            let serialNumber = String(data: characteristic.value!,
+                                      encoding: String.Encoding.utf8)
+            characteristicUpdateDelegate?.update(serialNumber: serialNumber!)
+            //case BLE.characteristic.debugRX:
+            //    break
+            //print("debugRX value: ", String(data: characteristic.value!, encoding: String.Encoding.utf8))
+            /*
+             let stringFromData = String(data: characteristic.value!,
+             encoding: String.Encoding.utf8)
+             if stringFromData == "EOM" {
+             print("DATA :" + String(data: self.data, encoding: String.Encoding.utf8)!)
+             
+             peripheral.setNotifyValue(false, for: characteristic)
+             break
+             }
+             self.data.append(characteristic.value!)
+             print("Received data:" + stringFromData!)
+             */
+            //            if (error) {
+            //                NSLog(@"Error discovering characteristics: %@", [error localizedDescription]);
+            //                return;
+            //            }
+            //
+            //            NSString *stringFromData = [[NSString alloc] initWithData:characteristic.value encoding:NSUTF8StringEncoding];
+            //
+            //            // Have we got everything we need?
+            //            if ([stringFromData isEqualToString:@"EOM"]) {
+            //
+            //                // We have, so show the data,
+            //                [self.textview setText:[[NSString alloc] initWithData:self.data encoding:NSUTF8StringEncoding]];
+            //
+            //                // Cancel our subscription to the characteristic
+            //                [peripheral setNotifyValue:NO forCharacteristic:characteristic];
+            //
+            //                // and disconnect from the peripehral
+            //                [self.centralManager cancelPeripheralConnection:peripheral];
+            //            }
+            //
+            //            // Otherwise, just add the data on to what we already have
+            //            [self.data appendData:characteristic.value];
+            //
+            //            // Log it
+            //            NSLog(@"Received: %@", stringFromData);
+            
+        default:
+            print(characteristic.uuid.uuidString)
+            print(characteristic.uuid)
+            break
+        }
+
     }
     
     //MARK: Central Manager Methods
